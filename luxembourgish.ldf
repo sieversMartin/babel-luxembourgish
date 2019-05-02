@@ -1,0 +1,116 @@
+\ProvidesLanguage{luxembourgish}
+[2019/05/02 v0.1BETA Luxembourgish support from the babel system]
+\LdfInit{luxembourgish}{captionsluxembourgish}
+\ifx\undefined\l@luxembourgish
+\@nopatterns{Luxembourgish}
+\adddialect\l@luxembourgish0
+\fi
+%%\bbl@declare@ttribute{luxembourgish}{<attrib>}{%
+\expandafter\addto\expandafter\extrasluxembourgish
+%%\expandafter{\extras<attrib>luxembourgish}%
+%%\let\captionsluxembourgish\captions<attrib>luxembourgish}
+\providehyphenmins{luxembourgish}{\tw@\thr@@}
+\StartBabelCommands*{luxembourgish}{captions}
+\SetString\prefacename{Preface}%
+\SetString\refname{References}%
+\SetString\abstractname{Abstract}%
+\SetString\bibname{Bibliography}%
+\SetString\chaptername{Chapter}%
+\SetString\appendixname{Appendix}%
+\SetString\contentsname{Contents}%
+\SetString\listfigurename{List of Figures}%
+\SetString\listtablename{List of Tables}%
+\SetString\indexname{Index}%
+\SetString\figurename{Figure}%
+\SetString\tablename{Table}%
+\SetString\partname{Part}%
+\SetString\enclname{encl}%
+\SetString\ccname{cc}%
+\SetString\headtoname{To}%
+\SetString\pagename{Page}%
+\SetString\seename{see}%
+\SetString\alsoname{see also}%
+\SetString\proofname{Proof}%
+\SetString\glossaryname{Glossary}%
+% More strings
+\StartBabelCommands*{luxembourgish}{date}%
+   [unicode, fontenc=TU EU1 EU2, charset=utf8]
+   \SetString\monthivname{Fréilénk}
+   \SetString\monthvname{Päischtmount}
+   \SetString\monthxname{Wäimount}
+   \SetString\monthxiiname{Krëschtmount}   
+   \SetString\weekdayiiname{Méindeg}   
+   \SetString\weekdayiiiname{Dënschdeg}
+   \SetString\weekdayivname{Mëttwoch}
+
+\StartBabelCommands*{luxembourgish}{date}%
+   \SetString\monthiname{Haartmount}
+   \SetString\monthiiname{Spierkel}
+   \SetString\monthiiiname{Lenz}
+   \SetString\monthivname{Fr\'{e}il\'{e}nk}
+   \SetString\monthvname{P\"{a}ischtmount}
+   \SetString\monthviname{Broochmount}
+   \SetString\monthviiname{Heemount}
+   \SetString\monthviiiname{Karschnatz}
+   \SetString\monthixname{Hierschtmount}
+   \SetString\monthxname{Wäimount}
+   \SetString\monthxiname{Wantermount}
+   \SetString\monthxiiname{Kr\"{e}schtmount} 
+
+   \SetString\weekdayiname{Sonndeg}
+   \SetString\weekdayiiname{M\'{e}indeg}   
+   \SetString\weekdayiiiname{D\"{e}nschdeg}
+   \SetString\weekdayivname{M\"{e}ttwoch}
+   \SetString\weekdayvname{Donneschdeg}
+   \SetString\weekdayviname{Freideg}
+   \SetString\weekdayviiname{Samschdeg}
+   
+   \SetString\today{\number\day.~%
+    \csname month\romannumeral\month name\endcsname~\number\year}
+\EndBabelCommands
+\initiate@active@char{"}
+\addto\extrasluxembourgish{\languageshorthands{luxembourgish}}
+\addto\extrasluxembourgish{%
+  \bbl@activate{"}}
+\addto\noextrasluxembourgish{%
+  \bbl@deactivate{"}}
+%%\let\extras<dialect>\extrasluxembourgish
+%%\let\noextras<dialect>\noextrasluxembourgish
+\begingroup \catcode`\"12
+\def\x{\endgroup
+  \def\dq{"}
+  \def\@SS{\mathchar"7019 }
+  \def\bbl@ss{\ifbbl@ntoss ss\else\textormath{\ss}{\@SS{}}\fi}
+  \def\bbl@SS{SS}
+  \def\bbl@sz{\ifbbl@ntoss sz\else\textormath{\ss}{\@SS{}}\fi}
+  \def\bbl@SZ{SZ}
+}
+\x
+\declare@shorthand{luxembourgish}{"a}{\textormath{\"{a}\allowhyphens}{\ddot a}}
+\declare@shorthand{luxembourgish}{"o}{\textormath{\"{o}\allowhyphens}{\ddot o}}
+\declare@shorthand{luxembourgish}{"u}{\textormath{\"{u}\allowhyphens}{\ddot u}}
+\declare@shorthand{luxembourgish}{"A}{\textormath{\"{A}\allowhyphens}{\ddot A}}
+\declare@shorthand{luxembourgish}{"O}{\textormath{\"{O}\allowhyphens}{\ddot O}}
+\declare@shorthand{luxembourgish}{"U}{\textormath{\"{U}\allowhyphens}{\ddot U}}
+\declare@shorthand{luxembourgish}{"e}{\textormath{\"{e}}{\ddot e}}
+\declare@shorthand{luxembourgish}{"E}{\textormath{\"{E}}{\ddot E}}
+\declare@shorthand{luxembourgish}{"i}{\textormath{\"{\i}}{\ddot\imath}}
+\declare@shorthand{luxembourgish}{"I}{\textormath{\"{I}}{\ddot I}}
+\declare@shorthand{luxembourgish}{"s}{\bbl@ss}
+\declare@shorthand{luxembourgish}{"S}{\bbl@SS}
+\declare@shorthand{luxembourgish}{"z}{\bbl@sz}
+\declare@shorthand{luxembourgish}{"Z}{\bbl@SZ}
+\declare@shorthand{luxembourgish}{"`}{\glqq}
+\declare@shorthand{luxembourgish}{"'}{\grqq}
+\declare@shorthand{luxembourgish}{"<}{\flqq}
+\declare@shorthand{luxembourgish}{">}{\frqq}
+\declare@shorthand{luxembourgish}{"-}{\nobreak\-\bbl@allowhyphens}
+\declare@shorthand{luxembourgish}{"|}{%
+  \textormath{\penalty\@M\discretionary{-}{}{\kern.03em}%
+              \allowhyphens}{}}
+\declare@shorthand{luxembourgish}{""}{\hskip\z@skip}
+\declare@shorthand{luxembourgish}{"~}{\textormath{\leavevmode\hbox{-}}{-}}
+\declare@shorthand{luxembourgish}{"=}{\penalty\@M-\hskip\z@skip}
+\declare@shorthand{luxembourgish}{"/}{\textormath
+  {\bbl@allowhyphens\discretionary{/}{}{/}\bbl@allowhyphens}{}}
+\ldf@finish{luxembourgish}
