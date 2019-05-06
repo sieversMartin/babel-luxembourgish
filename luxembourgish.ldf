@@ -1,37 +1,44 @@
 \ProvidesLanguage{luxembourgish}
-[2019/05/02 v0.1BETA Luxembourgish support from the babel system]
+[2019/05/06 v0.1BETA Luxembourgish support from the babel system]
 \LdfInit{luxembourgish}{captionsluxembourgish}
 \ifx\undefined\l@luxembourgish
-\@nopatterns{Luxembourgish}
-\adddialect\l@luxembourgish0
+   \@nopatterns{Luxembourgish}
+   \adddialect\l@luxembourgish0
 \fi
 %%\bbl@declare@ttribute{luxembourgish}{<attrib>}{%
 \expandafter\addto\expandafter\extrasluxembourgish
 %%\expandafter{\extras<attrib>luxembourgish}%
 %%\let\captionsluxembourgish\captions<attrib>luxembourgish}
 \providehyphenmins{luxembourgish}{\tw@\thr@@}
+\StartBabelCommands*{luxembourgish}{captions}%
+   [unicode, fontenc=TU EU1 EU2, charset=utf8]
+   \SetString\prefacename{Introduktioun}%
+   \SetString\abstractname{Resumé}%
+   \SetString\pagename{Säit}%
+
 \StartBabelCommands*{luxembourgish}{captions}
-\SetString\prefacename{Preface}%
-\SetString\refname{References}%
-\SetString\abstractname{Abstract}%
-\SetString\bibname{Bibliography}%
-\SetString\chaptername{Chapter}%
-\SetString\appendixname{Appendix}%
-\SetString\contentsname{Contents}%
-\SetString\listfigurename{List of Figures}%
-\SetString\listtablename{List of Tables}%
-\SetString\indexname{Index}%
-\SetString\figurename{Figure}%
-\SetString\tablename{Table}%
-\SetString\partname{Part}%
-\SetString\enclname{encl}%
-\SetString\ccname{cc}%
-\SetString\headtoname{To}%
-\SetString\pagename{Page}%
-\SetString\seename{see}%
-\SetString\alsoname{see also}%
-\SetString\proofname{Proof}%
-\SetString\glossaryname{Glossary}%
+   \SetString\prefacename{Introduktioun}%
+   \SetString\refname{Referenz}%
+   \SetString\abstractname{Resum\'{e}}%
+   \SetString\bibname{Literaturverzeechnes}%
+   \SetString\chaptername{Kapitel}%
+   \SetString\appendixname{Annex}%
+   \SetString\contentsname{Inhalt}%
+   \SetString\listfigurename{Ofbildungsverzeechnes}%
+   \SetString\listtablename{Tabellenverzeechnes}%
+   \SetString\indexname{Verzeechnes}%
+   \SetString\figurename{Ofbildung}%
+   \SetString\tablename{Tabell}%  
+   \SetString\partname{Deel}%
+   \SetString\enclname{Annex}%
+   \SetString\ccname{Verdeeler}%
+   \SetString\headtoname{un}%
+   \SetString\pagename{S\"{a}it}%
+   \SetString\seename{Vgl.}%
+   \SetString\alsoname{Vgl. och}%
+   \SetString\proofname{Beleeg}%
+   \SetString\glossaryname{Vocabulaire}%
+
 % More strings
 \StartBabelCommands*{luxembourgish}{date}%
    [unicode, fontenc=TU EU1 EU2, charset=utf8]
